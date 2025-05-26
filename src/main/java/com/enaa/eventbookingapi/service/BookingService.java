@@ -6,11 +6,13 @@ import com.enaa.eventbookingapi.Model.User;
 import com.enaa.eventbookingapi.repositories.BookingRepo;
 import com.enaa.eventbookingapi.repositories.EventRepo;
 import com.enaa.eventbookingapi.repositories.UserRepo;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Service
 public class BookingService {
     private final BookingRepo bookingRepository;
     private final UserRepo userRepository;

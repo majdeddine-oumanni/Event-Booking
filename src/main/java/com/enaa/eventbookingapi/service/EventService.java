@@ -29,16 +29,17 @@ public class EventService {
     }
 
     public EventDto update(Long id, EventDto dto){
-        Event event = eventRepo.findEventById(id);
-        EventDto foundDto = eventMapper.toDTO(event);
-        foundDto.setName(dto.getName());
-        foundDto.setCategory(dto.getCategory());
-        foundDto.setDate(dto.getDate());
-        foundDto.setLocation(dto.getLocation());
-        return foundDto;
+        Event foundEvent = eventRepo.findEventById(id);
+        foundEvent.setName(dto.getName());
+        foundEvent.setCategory(dto.getCategory());
+        foundEvent.setDate(dto.getDate());
+        foundEvent.setLocation(dto.getLocation());
+        Event savedEvent = eventRepo.save(foundEvent);
+        return eventMapper.toDTO(savedEvent);
     }
 
     public void delete(Long id){
         eventRepo.deleteById(id);
     }
+
 }

@@ -18,6 +18,39 @@ public class Booking {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private LocalDate bookingDate;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public LocalDate getBookingDate() {
+        return bookingDate;
+    }
+
+    public void setBookingDate(LocalDate bookingDate) {
+        this.bookingDate = bookingDate;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Event getEvent() {
+        return event;
+    }
+
+    public void setEvent(Event event) {
+        this.event = event;
+    }
+
     @ManyToOne
     private User user;
     @ManyToOne
